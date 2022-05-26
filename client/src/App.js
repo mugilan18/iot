@@ -77,7 +77,7 @@ else{
 <h3>
 
  
-  <spam style={{paddingLeft:"200px"}}>Mqsensor 4 : {mq4}</spam> <spam style={{paddingLeft:"100px"}}>Mqtsensor 7 : {mq7}</spam><br/><br/>
+  <spam style={{paddingLeft:"200px"}}>Mqsensor 4 : {mq4}</spam> <spam style={{paddingLeft:"100px"}}>Mqsensor 7 : {mq7}</spam><br/><br/>
   <spam style={{paddingLeft:"200px"}}> Mq4 concentration: {mq4c}</spam> <spam style={{paddingLeft:"100px"}}>Mq7 concentration: {mq7c}</spam>
 
 </h3>
