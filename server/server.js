@@ -6,6 +6,8 @@ const path = require('path');
 url = "mongodb+srv://test101:email712pa@cluster0.q1aco.mongodb.net/Sewage?retryWrites=true&w=majority"
 const app = express()
 const Test1Schema = require("./User");
+const Mq4Schema = require("./Mqfour");
+const Mq7Schema = require("./Mqseven");
 app.use(cors() );
 app.use(express.json())
 mongoose
@@ -24,8 +26,12 @@ mongoose
 app.get("/",async(req,res)=>{
   // res.send("index.html")
   const user = await Test1Schema.find().sort({_id:-1}).limit(450);
-  console.log(user)
-res.json(user.reverse())
+  const mq4data = await Mq4Schema.find()
+  const mq7data = await Mq7Schema.find()
+  const ldata = await Test1Schema.find().sort({_id:-1}).limit(1);
+  console.log(mq4data)
+  console.log(mq7data)
+res.json({graph:user.reverse(), "mq4":mq4data,"mq7":mq7data,"lastdata":ldata})
 });
 
 
