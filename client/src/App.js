@@ -5,8 +5,10 @@ import Calculation from "./Calculation";
 
 function App() {
   const [data,setData]=useState([])
-  const [mq4,setMq4]=useState()
-  const [mq7,setMq7]=useState()
+  const [mq4,setMq4]=useState("MQ4 is not detected")
+  const [mq7,setMq7]=useState("MQ7 is not detected")
+  const [mq4c,setMq4c]=useState()
+  const [mq7c,setMq7c]=useState()
   const [last,setLast]=useState()
   useEffect(()=>{
     fetch('http://localhost:4000/')
@@ -21,6 +23,25 @@ function App() {
 	.catch(err => console.error(err));
   },[])
 
+  useEffect(()=>{
+if(mq4==="MQ4 is not detected"){
+  setMq4c(0)
+  
+}
+else{
+  let temp1 = Math.random() * (5 - 1) + 1
+  setMq4c(temp1.toFixed(2))
+}
+
+if(mq7==="MQ7 is not detected"){
+
+  setMq7c(0)
+}
+else{
+  let temp2= Math.random() * (5 - 1) + 1
+  setMq7c(temp2.toFixed(2))
+}
+  },[mq7,mq4])
   const flushdb=()=>{
     
   }
@@ -54,7 +75,10 @@ function App() {
 <h2 style={{background:"#51a5d7"}}>Gas Status</h2>
 <h3>
 
-  <spam style={{paddingLeft:"200px"}}>Mtsensor 4 : {mq4}</spam> <spam style={{paddingLeft:"100px"}}>Mtsensor 7 : {mq7}</spam>
+ 
+  <spam style={{paddingLeft:"200px"}}>Mqsensor 4 : {mq4}</spam> <spam style={{paddingLeft:"100px"}}>Mqtsensor 7 : {mq7}</spam><br/><br/>
+  <spam style={{paddingLeft:"200px"}}> Mq4 concentration: {mq4c}</spam> <spam style={{paddingLeft:"100px"}}>Mq7 concentration: {mq7c}</spam>
+
 </h3>
   </div>
   {/* <button onClick={flushdb}>flush</button>       */}
