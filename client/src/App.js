@@ -28,7 +28,8 @@ function App() {
     <div className="App">
       <header className="App-header">
     <h1 style={{textAlign:"center"}}>Sewage Monitoring System</h1> 
-    <h2 style={{background:"#51a5d7"}}>Water Distance:</h2>
+    <h2>Drainage Pumping Station - Bussy Street Puducherry</h2>
+    <h2 style={{background:"#51a5d7"}}>Distance Graph:</h2>
      <div>
         
          
